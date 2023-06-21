@@ -23,3 +23,7 @@ Each set of values is associated to a type of operation (which has an associated
   * 3 -> Open circuit (A String disconnected from the power inverter)
 
   * 4 -> Shadowing (Shadowing in one or more modules)
+
+## data_preprocessing.py
+
+This script was made to do the data extraction from the Matlab files mentioned above, and to have done the necessary data_preprocessing so that later they could be introduced in a pandas dataframe and ready to be used in the realization of this dissertation.
