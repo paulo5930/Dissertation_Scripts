@@ -27,3 +27,18 @@ Each set of values is associated to a type of operation (which has an associated
 ## data_preprocessing.py
 
 This script was made to do the data extraction from the Matlab files mentioned above, and to have done the necessary data_preprocessing so that later they could be introduced in a pandas dataframe and ready to be used in the realization of this dissertation.
+
+## Machine Learning Models Scripts
+
+The MLP_dt.py, tree.py, knn.py, __ , xgboost_df.py and light_df.py represent the scripts created to adapt and impement different types of ML algorithms to the issue approached in this dissertation. The algorithms were: Multilayer Perceprotn, Decision Tree, K-Nearest-Neighhbors, upport Vector Machine, Extreme Gradient Boosting and Light Gradient Boosting.
+
+The steps in carrying out the scripts was common to all:
+
+ * Data Processing and Data Treatment -> First data was processed and treated so it could be inserted in the models
+  
+  * Model choosing and parameter setting  -> Then the models were choosen and the more accurate parameters were choosen and adapted for                                               the data in question
+
+  * Fault Label Prediction -> AFter we tunned the parameters for the model the fault labels were then predicted
+
+  * Evaluation with the correct metrics -> With the help  Scikit-Learn library the most appropriate metrics values were generated, so                                                 that a correct evaluation could be made
+
