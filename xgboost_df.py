@@ -14,16 +14,14 @@ from imblearn.under_sampling import RandomUnderSampler
 from sklearn.utils import class_weight
 import time
 
-#import seaborn as sns
+
 #Loading the data
 
 df = pd.read_csv('df.csv').dropna()
 
 df = df[df.irr > 100]
 
-#remove_n = 480000
-#drop_indices = np.random.choice(df.index, remove_n, replace=False)
-#df = df.drop(drop_indices)
+
 
 # Determination of the predictors and the criterion
 columns_x=['irr','pvt','idc1','idc2','vcd1','vdc2']
@@ -56,18 +54,9 @@ x = sc.fit_transform(x)
 
 # Train-Validation-Test Split
 
-#under = RandomUnderSampler(sampling_strategy='all')
-#x,y = under.fit_resample(x,y)
-
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
 
-#print()
-#print('y_test', y_test)
-
-#print()
-#print('y_train', y_train)
-
-#Building model
+#Building model and test time
 
 xgb_model = xgb.XGBClassifier(booster='gbtree',eta=0.05,subsample=0.05,max_depth=4,min_child_weight=5)
 xgb_model.fit(x_train, y_train)
