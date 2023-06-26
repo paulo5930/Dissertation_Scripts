@@ -98,7 +98,7 @@ encoder = OneHotEncoder()
 encoded_y = encoder.fit(y_pred.values.reshape(-1,1))
 y_pred = encoded_y.transform(y_pred.values.reshape(-1,1)).toarray()
 
-pred = pd.DataFrame(y_pred).round(decimals=0)
-pred.to_csv('maisumpred.csv')
+#pred = pd.DataFrame(y_pred).round(decimals=0)
+#pred.to_csv('maisumpred.csv')
 
 
