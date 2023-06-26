@@ -16,9 +16,6 @@ df = pd.read_csv('df.csv').dropna()
 
 df = df[df.irr > 100]
 
-
-### DATASET TEVE DE SER REDUZIDO PARA SER COMPUTCIONALMENTE MAIS LEVE ###
-
 print()
 print('df_values', df.value_counts())
 
