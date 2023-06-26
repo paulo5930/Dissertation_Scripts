@@ -39,11 +39,6 @@ columns_y = ['f_nv']
 x = df[columns_x]
 y = df[columns_y] 
 
-#Balancing dataset
-
-#under = RandomUnderSampler(sampling_strategy='all')
-#x,y = under.fit_resample(x,y)
-
 
 x = pd.DataFrame(x)
 #print('\n x', x.value_counts())
@@ -90,26 +85,6 @@ print()
 print(' \n\n x_test_values',  x_test.value_counts())
 print()
 
-#under=RandomUnderSampler()
-#x_train, y_train = under.fit_resample(x_train, y_train)
-
-
-
-#i=1
-#while i < 50:
-    #knn = KNeighborsClassifier(n_neighbors=i)
-    #print( '\n i = ', i)
-    #knn.fit(x_train, y_train)
-    #y_pred = knn.predict(x_test).round(decimals=0)
-    #accuracy_test = accuracy_score(y_test, y_pred)
-    #print("Accuracy_test: {:.2f}%".format(accuracy_test * 100))
-
-    #print('Recall: ', recall_score(y_test,y_pred, average='macro'))
-    #print('F1 Score: ', f1_score(y_test,y_pred, average = 'macro'))
-
-    
-    #i=i+1
-
 #KNN Classifier
 
 knn = KNeighborsClassifier(n_neighbors=1000)         #k == n_neighbors
@@ -138,13 +113,7 @@ print()
 
 print(' \n\n KNN Score: ', cross_val_score(knn, y_test, y_pred, cv=5))
 
-#pred = pd.DataFrame(y_test).round(decimals=0)
-#pred.to_csv('knn_pred.csv')
 
-#One hot encoding and evaluating
-
-#y_test =pd.DataFrame(y_test).round(decimals=0)
-#y_pred = pd.DataFrame(y_pred).round(decimals=0)
 
 print()
 print('y_test: ')
@@ -165,14 +134,6 @@ print( recall_score(y_test,y_pred, average='macro'))
 print(' F1 Score: ')
 print( f1_score(y_test,y_pred, average = 'macro'))
 
-
-#encoder_2 = OneHotEncoder()
-
-#encoded_y_test = encoder_2.fit(y_test.values.reshape(-1,1))
-#y_test = encoded_y_test.transform(y_test.values.reshape(-1,1)).toarray()
-
-#encoded_y_pred = encoder_2.fit(y_pred.values.reshape(-1,1))
-#y_pred = encoded_y_pred.transform(y_pred.values.reshape(-1,1)).toarray()
 
 y_pred = pd.DataFrame(y_pred)
 
